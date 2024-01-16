@@ -36,5 +36,10 @@
           }  
         }
       }
+      post {
+        always {
+          cleanWs()
+        }
+      }
     }
     
