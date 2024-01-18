@@ -2,7 +2,7 @@ env = "dev"
 tags = {
     company = "xyz co"
     bu_unit = "Ecommerce"
-    project = "roboshop"
+    project_name = "roboshop"
 }
 
 default_vpc_cidr = "172.31.0.0/16"
