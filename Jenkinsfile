@@ -8,9 +8,18 @@
             ansiColor('xterm')
         }
         parameters {
-            choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'cHOOSE TF action')
+            choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'CHOOSE TF action')
         }
         stages{
+          stage('parameter store update'){
+            steps {
+              dir('PS'){
+                git branch: 'main', url: 'https://github.com/shreebadiger/aws-parameter-store.git'      
+                sh 'terraform init'
+                sh 'terraform apply -auto-approve '                
+              }
+            }
+          }
             stage('TF ACTION'){
             parallel{
               stage('DEV ENV'){
