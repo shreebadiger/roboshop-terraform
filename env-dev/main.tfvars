@@ -17,13 +17,13 @@ certificate_arn = "arn:aws:acm:us-east-1:751177946459:certificate/f004e848-d847-
 
 vpc = {
     main = {
-            vpc_cidr_block = "10.11.0.0/16"
-            public_subnet = ["10.11.0.0/24","10.11.1.0/24"]
-            web_subnet = ["10.11.2.0/24","10.11.3.0/24"]
-            app_subnet = ["10.11.4.0/24","10.11.5.0/24"]
-            db_subnet = ["10.11.6.0/24","10.11.7.0/24"]
-            azs_subnet = ["us-east-1a","us-east-1b"]
-  }
+    vpc_cidr_block = "10.11.0.0/16"
+    public_subnet = ["10.11.0.0/24","10.11.1.0/24"]
+    web_subnet = ["10.11.2.0/24","10.11.3.0/24"]
+    app_subnet = ["10.11.4.0/24","10.11.5.0/24"]
+    db_subnet = ["10.11.6.0/24","10.11.7.0/24"]
+    azs_subnet = ["us-east-1a","us-east-1b"]
+}
 }
 
 
