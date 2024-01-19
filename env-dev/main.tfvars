@@ -37,4 +37,14 @@ rds = {
   }
 }
 
+docdb = {
+    main = {
+    engine = "docdb"
+    engine_version = "4.0.0"
+    instance_class = "db.t3.medium"
+    parameter_group_family = "docdb4.0"
+    instnace_count = 1
+  }
+}
+
 

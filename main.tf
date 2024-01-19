@@ -36,3 +36,24 @@ module "rds" {
     sg_cidrs = lookup(lookup(var.vpc,"main",null),"app_subnet",null)
     
 }
+
+
+module "docdb" {
+    source = "git::https://github.com/shreebadiger/tf-module-docdb.git"
+
+    for_each = var.docdb
+    engine = each.value["engine"]
+    engine_version = each.value["engine_version"]
+    instance_class = each.value["instance_class"]
+    parameter_group_family = each.value["parameter_group_family"]
+    instance_count = each.value["instance_count"]
+
+    env = var.env
+    tags = var.tags
+    kms = var.kms
+
+    subnets = lookup(lookup(module.vpc,"main",null), "db_subnet",null)
+    vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
+    sg_cidrs = lookup(lookup(var.vpc,"main",null),"app_subnet",null)
+    
+}

@@ -9,4 +9,5 @@
     variable "kms"{}
     variable "certificate_arn"{}
     variable "rds"{}
+    variable "docdb"{}
 
