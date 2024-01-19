@@ -77,3 +77,22 @@ module "elasticache" {
     sg_cidrs = lookup(lookup(var.vpc,"main",null),"app_subnet",null)
     
 }
+
+module "rabbitmq" {
+    source = "git::https://github.com/shreebadiger/tf-module-rabbitmq.git"
+
+    for_each = var.rabbitmq
+    instance_type = var.instance_type
+
+    env = var.env
+    tags = var.tags
+    kms = var.kms
+
+    subnets = lookup(lookup(module.vpc,"main",null), "db_subnet",null)
+    vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
+    sg_cidrs = lookup(lookup(var.vpc,"main",null),"app_subnet",null)
+    bastion_cidrs = var.bastion_cidrs
+    route53_zone_id = var.route53_zone_id
+    
+    
+}
