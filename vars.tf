@@ -10,4 +10,4 @@
     variable "certificate_arn"{}
     variable "rds"{}
     variable "docdb"{}
-
+    variable "elasticache"{}             
