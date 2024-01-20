@@ -106,7 +106,7 @@ module "app" {
     instance_type = each.value["instance_type"]
     instance_count = each.value["instance_count"]
     app_port = each.value["app_port"]
-
+    priority = each.value["priority"]
 
     env = var.env
     tags = var.tags
@@ -115,8 +115,11 @@ module "app" {
     subnets = lookup(lookup(module.vpc,"main",null), each.value["app_subnet_name"],null)
     vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
     sg_cidrs = lookup(lookup(var.vpc,"main",null),each.value["lb_subnet_name"],null)
+    alb_name = lookup(lookup(module.alb,each.value["alb_name"],null),"alb_name",null)
+    listener_arn = lookup(lookup(module.alb,each.value["alb_name"],null),"listener_arn",null)
     bastion_cidrs = var.bastion_cidrs
     prometheus_cidrs = var.prometheus_cidrs
+    route53_zone_id = var.route53_zone_id
 
 }
 

@@ -73,6 +73,8 @@ app = {
         app_port = 8080
         app_subnet_name = "app_subnet"
         lb_subnet_name = "app_subnet"
+        alb_name = "private"
+        priority = 1
     }
       frontend = {
         instance_type = "t3.small"
@@ -80,6 +82,8 @@ app = {
         app_port = 80
         app_subnet_name = "web_subnet"
         lb_subnet_name = "public_subnet"
+        alb_name = "public"
+        priority = 1
     }
       cart = {
         instance_type = "t3.small"
@@ -87,6 +91,8 @@ app = {
         app_port = 8080
         app_subnet_name = "app_subnet"
         lb_subnet_name = "app_subnet"
+        alb_name = "private"
+        priority = 2
     }
       user = {
         instance_type = "t3.small"
@@ -94,6 +100,8 @@ app = {
         app_port = 8080
         app_subnet_name = "app_subnet"
         lb_subnet_name = "app_subnet"
+        alb_name = "private"
+        priority = 3
     }
       shipping = {
         instance_type = "t3.small"
@@ -101,6 +109,8 @@ app = {
         app_port = 8080
         app_subnet_name = "app_subnet"
         lb_subnet_name = "app_subnet"
+        alb_name = "private"
+        priority = 4
     }
       payment = {
         instance_type = "t3.small"
@@ -108,6 +118,8 @@ app = {
         app_port = 8080
         app_subnet_name = "app_subnet"
         lb_subnet_name = "app_subnet"
+        alb_name = "private"
+        priority = 5
     }
       dispatch = {
         instance_type = "t3.small"
@@ -115,6 +127,8 @@ app = {
         app_port = 8080
         app_subnet_name = "app_subnet"
         lb_subnet_name = "app_subnet"
+        alb_name = "private"
+        priority = 6
    }
 }
  
