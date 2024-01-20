@@ -25,6 +25,7 @@ vpc = {
     app_subnet = ["10.11.4.0/24","10.11.5.0/24"]
     db_subnet = ["10.11.6.0/24","10.11.7.0/24"]
     azs_subnet = ["us-east-1a","us-east-1b"]
+    internet = ["0.0.0.0/0"]
 }
 }
 
@@ -116,5 +117,31 @@ app = {
         lb_subnet_name = "app_subnet"
    }
 }
+ 
+alb = {
+  public = {
+    certificate_arn = "arn:aws:acm:us-east-1:751177946459:certificate/f004e848-d847-45e8-b070-c290fb1b072c"
+    enable_https = true
+    internal = false
+    sg_cidrs = "internet"
+    subnet_name = "public_subnet"
+    ingress_ports = {
+        http = { port = 80 }
+        https = { port = 443 }
+    }
 
+  }
+
+  private = {
+    certificate_arn = "arn:aws:acm:us-east-1:751177946459:certificate/f004e848-d847-45e8-b070-c290fb1b072c"
+    enable_https = false
+    internal = true
+    sg_cidrs = "app_subnet"
+    subnet_name = "public_subnet"
+    ingress_ports = {
+        http = { port = 80 }
+    }
+
+  }
+}
 
