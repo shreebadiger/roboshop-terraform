@@ -5,16 +5,16 @@ tags = {
     project_name = "roboshop"
 }
 
-default_vpc_cidr = "172.31.0.0/16"
-default_vpc_id = "vpc-012386a750941fd98"
-default_route_table_id = "rtb-01d47609d1bb376b7"
-account_id = "751177946459"
+    default_vpc_cidr = "172.31.0.0/16"
+    default_vpc_id = "vpc-012386a750941fd98"
+    default_route_table_id = "rtb-01d47609d1bb376b7"
+    account_id = "751177946459"
 
-route53_zone_id = "Z043769343BOX5323WQF"
-kms = "arn:aws:kms:us-east-1:751177946459:key/a67450bb-b04f-45c0-8406-5588122b350e"
-certificate_arn = "arn:aws:acm:us-east-1:751177946459:certificate/f004e848-d847-45e8-b070-c290fb1b072c"
-bastion_cidrs = ["172.31.46.123/32"]
-prometheus_cidrs = ["172.31.37.53/32"]
+    route53_zone_id = "Z043769343BOX5323WQF"
+    kms = "arn:aws:kms:us-east-1:751177946459:key/a67450bb-b04f-45c0-8406-5588122b350e"
+    certificate_arn = "arn:aws:acm:us-east-1:751177946459:certificate/f004e848-d847-45e8-b070-c290fb1b072c"
+    bastion_cidrs = ["172.31.46.123/32"]
+    prometheus_cidrs = ["172.31.37.53/32"]
 
 
 vpc = {
@@ -66,55 +66,55 @@ rabbitmq = {
 }
 
 app = {
-    catalogue = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 8080
-      app_subnet_name = "app_subnet"
-      lb_subnet_name = "app_subnet"
-  }
-    frontend = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 80
-      app_subnet_name = "web_subnet"
-      lb_subnet_name = "public_subnet"
-  }
-    cart = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 8080
-      app_subnet_name = "app_subnet"
-      lb_subnet_name = "app_subnet"
-  }
-    user = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 8080
-      app_subnet_name = "app_subnet"
-      lb_subnet_name = "app_subnet"
-  }
-    shipping = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 8080
-      app_subnet_name = "app_subnet"
-      lb_subnet_name = "app_subnet"
-  }
-    payment = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 8080
-      app_subnet_name = "app_subnet"
-      lb_subnet_name = "app_subnet"
-  }
-    dispatch = {
-      instance_type = "t3.small"
-      instance_count = 1
-      app_port = 8080
-      app_subnet_name = "app_subnet"
-      lb_subnet_name = "app_subnet"
-  }
+      catalogue = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 8080
+        app_subnet_name = "app_subnet"
+        lb_subnet_name = "app_subnet"
+    }
+      frontend = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 80
+        app_subnet_name = "web_subnet"
+        lb_subnet_name = "public_subnet"
+    }
+      cart = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 8080
+        app_subnet_name = "app_subnet"
+        lb_subnet_name = "app_subnet"
+    }
+      user = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 8080
+        app_subnet_name = "app_subnet"
+        lb_subnet_name = "app_subnet"
+    }
+      shipping = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 8080
+        app_subnet_name = "app_subnet"
+        lb_subnet_name = "app_subnet"
+    }
+      payment = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 8080
+        app_subnet_name = "app_subnet"
+        lb_subnet_name = "app_subnet"
+    }
+      dispatch = {
+        instance_type = "t3.small"
+        instance_count = 1
+        app_port = 8080
+        app_subnet_name = "app_subnet"
+        lb_subnet_name = "app_subnet"
+   }
 }
 
 
