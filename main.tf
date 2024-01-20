@@ -112,12 +112,11 @@ module "app" {
     tags = var.tags
     kms = var.kms
 
-    subnets = lookup(lookup(module.vpc,"main",null), "app_subnet_name",null)
+    subnets = lookup(lookup(module.vpc,"main",null), each.value["app_subnet_name"],null)
     vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
-    sg_cidrs = lookup(lookup(var.vpc,"main",null),"lb_subnet_name",null)
+    sg_cidrs = lookup(lookup(var.vpc,"main",null),each.value["lb_subnet_name"],null)
     bastion_cidrs = var.bastion_cidrs
     prometheus_cidrs = var.prometheus_cidrs
 
-    
-    
 }
+
