@@ -94,9 +94,7 @@ module "rabbitmq" {
     bastion_cidrs = var.bastion_cidrs
     route53_zone_id = var.route53_zone_id
     
-    
 }
-
 
 module "app" {
     source = "git::https://github.com/shreebadiger/tf-module-app.git"
@@ -129,15 +127,16 @@ module "alb" {
     for_each = var.alb
     certificate_arn = each.value["certificate_arn"]
     internal = each.value["internal"]
+    sg_cidrs = each.value["sg_cidrs"]
+
+    type = each.key    
 
     env = var.env
     tags = var.tags
-    type = each.key
     route53_zone_id = var.route53_zone_id
 
     subnets = lookup(lookup(module.vpc,"main",null), each.value["subnet_name"],null)
     vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
-    sg_cidrs = lookup(lookup(var.vpc,"main",null),each.value["sg_cidrs"],null)
 
 }
 
