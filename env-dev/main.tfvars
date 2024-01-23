@@ -138,14 +138,12 @@ alb = {
     internal = false
     sg_cidrs = "internet"
     subnet_name = "public_subnet"
-
   }
   private = {
     certificate_arn = "arn:aws:acm:us-east-1:751177946459:certificate/f004e848-d847-45e8-b070-c290fb1b072c"
     internal = true
     sg_cidrs = "app_subnet"
     subnet_name = "public_subnet"
-
   }
 }
 
