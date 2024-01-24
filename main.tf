@@ -137,7 +137,7 @@ module "alb" {
 
     subnets = lookup(lookup(module.vpc,"main",null), each.value["subnet_name"],null)
     vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
-    sg_cidrs = lookup(lookup(module.vpc,"main",null), each.value["sg_cidrs"],null)
+    sg_cidrs = each.value["sg_cidrs"]
 
 }
 
